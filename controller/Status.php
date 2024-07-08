@@ -22,8 +22,18 @@ class Status {
 
 	public function display(): void {
 
-		if ($this->page == null) return;
-		$data = $this->page->export();
+		$data = [
+			"page" => [
+				"title" => "Status Page"
+			],
+			"stats" => [0],
+			"total" => 1,
+			"groups" => []
+		];
+		
+		if ($this->page != null) {
+			$data = $this->page->export();
+		}
 
 		$twig_config = [];
 		if (Config::get("enable_twig_cache")) $twig_config["cache"] = "../cache/twig/";

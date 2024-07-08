@@ -29,7 +29,7 @@ class Monitor {
 		$opts = Config::get("monitor_options", []);
 		$bid = $s->backend_id;
 		$page = $s->slug;
-		$opt = $opts["$page/$bid:$id"] ?? $opts["$page/$id"] ?? $opts["$bid:$id"] ?? $opts[$id] ?? [];
+		$opt = $opts["$page/$bid:$id"] ?? $opts["$page/$id"] ?? $opts["$bid:$id"] ?? $opts[$id] ?? $opts[$page] ?? [];
 
 		$heartbeats = [];
 		foreach ($heartbeat["heartbeatList"][$id] as $beat) {

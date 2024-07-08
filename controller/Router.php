@@ -39,12 +39,9 @@ class Router {
 		foreach ($backend_ids as $bid) {
 			$status = new Status($bid, $slug);
 			$page = $status->get_page();
-			if ($page) {
-				$status->display();
-				return;
-			}
+			$status->display();
+			return;
 		}
-		echo "Failed to load data!";
 
 	}
 
