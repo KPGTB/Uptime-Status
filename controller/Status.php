@@ -24,7 +24,7 @@ class Status {
 
 		$data = [
 			"page" => [
-				"title" => "Status Page"
+				"title" => Config::get("down_title", "Status Page")
 			],
 			"stats" => [0],
 			"total" => 1,

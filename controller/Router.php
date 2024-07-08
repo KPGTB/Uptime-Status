@@ -36,11 +36,19 @@ class Router {
 		if (!is_array($backend_ids)) $backend_ids = [$backend_ids];
 
 		$status = null;
+		$displayed = false;
 		foreach ($backend_ids as $bid) {
 			$status = new Status($bid, $slug);
 			$page = $status->get_page();
+			if($page != null) {
+				$displayed = true;
+				$status->display();
+				return;
+			}
+		}
+
+		if(!$displayed && $status != null) {
 			$status->display();
-			return;
 		}
 
 	}

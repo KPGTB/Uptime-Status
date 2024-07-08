@@ -48,6 +48,11 @@ $config = [
 	"default_language" => "en",
 
 	/**
+	 * Title of page when all backends are down
+	 */
+	"down_title" => "Status Page",
+
+	/**
 	 * Timezone of displayed date
 	 */
 	"timezone" => "Etc/UTC"
